@@ -26,8 +26,13 @@ public class FollowerController {
         return repo.findFollowers(id);
     }
 
-    @PostMapping("/")
+    @PostMapping("/following")
     public void addFollowing(@RequestHeader UUID follower_id, @RequestParam("id") UUID id) {
         repo.save(new Follower(follower_id, id));
+    }
+
+    @DeleteMapping("/follower")
+    public void removeFollower(@RequestHeader UUID following_id, @RequestParam("id") UUID id) {
+        repo.deleteFollower(following_id, id);
     }
 }
