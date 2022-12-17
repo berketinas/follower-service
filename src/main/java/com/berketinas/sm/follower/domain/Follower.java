@@ -8,6 +8,7 @@ import java.util.UUID;
 @Table(name="followers")
 public class Follower {
     @Id
+    @GeneratedValue
     @Column(name = "id")
     private UUID id;
 
@@ -15,6 +16,11 @@ public class Follower {
     private UUID following;
 
     public Follower() {}
+
+    public Follower(UUID follower, UUID following) {
+        this.follower = follower;
+        this.following = following;
+    }
 
     public UUID getId() {
         return id;

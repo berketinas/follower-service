@@ -1,10 +1,9 @@
 package com.berketinas.sm.follower.controller;
 
+import com.berketinas.sm.follower.domain.Follower;
 import com.berketinas.sm.follower.dto.IFollowDTO;
 import com.berketinas.sm.follower.repo.FollowerRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -25,5 +24,10 @@ public class FollowerController {
     @GetMapping("/follower")
     public List<IFollowDTO> getFollower(@RequestHeader UUID id) {
         return repo.findFollowers(id);
+    }
+
+    @PostMapping("/")
+    public void addFollowing(@RequestHeader UUID follower_id, @RequestParam("id") UUID id) {
+        repo.save(new Follower(follower_id, id));
     }
 }
