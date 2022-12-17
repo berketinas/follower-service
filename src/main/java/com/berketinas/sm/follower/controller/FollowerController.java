@@ -17,22 +17,27 @@ public class FollowerController {
     }
 
     @GetMapping("/following")
-    public List<IFollowDTO> getFollowing(@RequestHeader UUID id) {
-        return repo.findFollowing(id);
+    public List<IFollowDTO> getFollowing(@RequestHeader UUID user_id) {
+        return repo.findFollowing(user_id);
     }
 
     @GetMapping("/follower")
-    public List<IFollowDTO> getFollower(@RequestHeader UUID id) {
-        return repo.findFollowers(id);
+    public List<IFollowDTO> getFollower(@RequestHeader UUID user_id) {
+        return repo.findFollowers(user_id);
     }
 
     @PostMapping("/following")
-    public void addFollowing(@RequestHeader UUID follower_id, @RequestParam("id") UUID id) {
-        repo.save(new Follower(follower_id, id));
+    public void follow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
+        repo.save(new Follower(user_id, id));
     }
 
     @DeleteMapping("/follower")
-    public void removeFollower(@RequestHeader UUID following_id, @RequestParam("id") UUID id) {
-        repo.deleteFollower(following_id, id);
+    public void removeFollow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
+        repo.deleteFollower(user_id, id);
+    }
+
+    @DeleteMapping("/following")
+    public void unfollow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
+        repo.unfollow(user_id, id);
     }
 }
