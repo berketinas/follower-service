@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.berketinas.sm.friend-service' is invalid and this project uses 'com.berketinas.sm.friendservice' instead.
+* The original package name 'com.berketinas.sm.friend-service' is invalid and this project uses 'com.berketinas.sm.follower' instead.
 
 # Getting Started
 
