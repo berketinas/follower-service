@@ -13,6 +13,6 @@ CREATE TABLE followers (
 );
 
 INSERT INTO followers (follower, following)
-VALUES ('a534fc6c-8c94-4911-9260-738e10a27fca', '58d57d08-3945-4b0c-8eba-627d2a92a022'),
-       ('9fd4ba77-8659-40a2-bde9-d927125fb314', '18354101-cabf-423b-9a17-7f272770275f'),
-       ('7fc24be9-6265-4a0a-9876-573dee9437d2', '18354101-cabf-423b-9a17-7f272770275f');
+VALUES ('00360aba-851f-4338-aa69-0f38038c0b81', '69cd611c-5d3e-49ce-8f71-c1565b198677'),
+       ('a63b2809-3c6d-4e0c-b9be-022133543b8a', 'd443a0eb-4aeb-424e-aaa8-06199b642a29'),
+       ('8cda377a-dbee-4b21-b08b-c2d439212568', 'd443a0eb-4aeb-424e-aaa8-06199b642a29');
