@@ -16,6 +16,11 @@ public class FollowerController {
         this.repo = repo;
     }
 
+    @GetMapping("/")
+    public String test() {
+        return "hello";
+    }
+
     @GetMapping("/following")
     public List<IFollowDTO> getFollowing(@RequestHeader UUID user_id) {
         return repo.findFollowing(user_id);
