@@ -31,7 +31,7 @@ public interface FollowerRepository extends JpaRepository<Follower, UUID> {
     @Query(value = "DELETE FROM followers " +
             "WHERE following = :user AND follower = :id",
         nativeQuery = true)
-    void deleteFollower(@Param("user") UUID user, @Param("id") UUID id);
+    void removeFollower(@Param("user") UUID user, @Param("id") UUID id);
 
     @Transactional
     @Modifying

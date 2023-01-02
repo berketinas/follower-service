@@ -1,8 +1,7 @@
 package com.berketinas.sm.follower.controller;
 
-import com.berketinas.sm.follower.domain.Follower;
 import com.berketinas.sm.follower.dto.IFollowDTO;
-import com.berketinas.sm.follower.repo.FollowerRepository;
+import com.berketinas.sm.follower.service.FollowerService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,10 +9,10 @@ import java.util.UUID;
 
 @RestController
 public class FollowerController {
-    private final FollowerRepository repo;
+    private final FollowerService service;
 
-    FollowerController(FollowerRepository repo) {
-        this.repo = repo;
+    FollowerController(FollowerService service) {
+        this.service = service;
     }
 
     @GetMapping("/")
@@ -23,26 +22,26 @@ public class FollowerController {
 
     @GetMapping("/following")
     public List<IFollowDTO> getFollowing(@RequestHeader UUID user_id) {
-        return repo.findFollowing(user_id);
+        return service.getFollowing(user_id);
     }
 
     @GetMapping("/follower")
     public List<IFollowDTO> getFollower(@RequestHeader UUID user_id) {
-        return repo.findFollowers(user_id);
+        return service.getFollower(user_id);
     }
 
     @PostMapping("/following")
     public void follow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
-        repo.save(new Follower(user_id, id));
+        service.follow(user_id, id);
     }
 
     @DeleteMapping("/follower")
-    public void removeFollow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
-        repo.deleteFollower(user_id, id);
+    public void removeFollower(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
+        service.removeFollower(user_id, id);
     }
 
     @DeleteMapping("/following")
     public void unfollow(@RequestHeader UUID user_id, @RequestParam("id") UUID id) {
-        repo.unfollow(user_id, id);
+        service.unfollow(user_id, id);
     }
 }
