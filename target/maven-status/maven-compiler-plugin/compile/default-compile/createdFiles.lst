@@ -1,6 +1,7 @@
 com\berketinas\sm\follower\controller\FollowerController.class
 com\berketinas\sm\follower\FollowerServiceApplication.class
 com\berketinas\sm\follower\dto\IFollowDTO.class
+com\berketinas\sm\follower\service\FollowerService.class
 com\berketinas\sm\follower\domain\Follower.class
 com\berketinas\sm\follower\repo\FollowerRepository.class
 com\berketinas\sm\follower\ServletInitializer.class
