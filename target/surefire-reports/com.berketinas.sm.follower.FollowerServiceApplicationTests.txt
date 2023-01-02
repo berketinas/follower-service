@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.berketinas.sm.follower.FollowerServiceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.673 s - in com.berketinas.sm.follower.FollowerServiceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.539 s - in com.berketinas.sm.follower.FollowerServiceApplicationTests
