@@ -11,7 +11,7 @@
 	<groupId>com.berketinas.sm</groupId>
 	<artifactId>follower-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>follower-service</name>
 	<description>REST service with Spring &amp; Spring Boot</description>
 	<properties>
